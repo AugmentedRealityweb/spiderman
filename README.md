@@ -15,17 +15,18 @@
     }
 
     .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     .image-container img {
-      max-width: 2000px;
-      max-height: 2080px;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      border: 2px solid #fff;
     }
 
     .chat-widget {
@@ -34,13 +35,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 20%;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
   <div class="image-container">
-    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp" alt="Second Image">
+    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp" alt="Background Image">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
