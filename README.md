@@ -22,8 +22,8 @@
     }
 
     .image-container img {
-      max-width: 1920px;
-      max-height: 720px;
+      max-width: 920px;
+      max-height: 1080px;
       object-fit: cover;
       border: 2px solid #fff;
     }
