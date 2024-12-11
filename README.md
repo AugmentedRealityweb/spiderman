@@ -31,8 +31,8 @@
 
     .chat-widget {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 150%;
+    left: 150%;
     transform: translate(-50%, -50%);
     width: 450px;
     height: 600px;
@@ -42,7 +42,7 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background-color: #fff5e1;
+    background-color: transparent;
     z-index: 1;
 }
   </style>
