@@ -5,17 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paywall</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #000;
-            flex-direction: column;
+         margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      flex-direction: column;
         }
 
         #paywall {
@@ -97,14 +94,17 @@
     <div id="paywall">
         <div class="paywall-content">
             <h2>Purchase More Conversation Time</h2>
-            <p>Enter your email to extend your conversation:</p>
-            <input type="email" id="email-input" placeholder="Enter your email">
-            <button onclick="submitEmail()">Submit</button>
-            <p id="error-message" class="hidden">Please enter a valid email.</p>
+            <p>Select your desired time extension:</p>
+            <ul>
+                <li>10 minutes: 15 lei - <a href="https://buy.stripe.com/00geWt05FcuU7rWeUU" target="_blank" onclick="handlePaymentClick('10')">Pay Now</a></li>
+                <li>30 minutes: 25 lei - <a href="https://buy.stripe.com/test_30minutes" target="_blank" onclick="handlePaymentClick('30')">Pay Now</a></li>
+                <li>60 minutes: 50 lei - <a href="https://buy.stripe.com/test_60minutes" target="_blank" onclick="handlePaymentClick('60')">Pay Now</a></li>
+            </ul>
         </div>
     </div>
 
     <script>
+        const webhookUrl = "https://stripewebhook-m52zyfz53q-uc.a.run.app";
         const images = document.querySelectorAll('.image-container img');
         let currentIndex = 0;
 
@@ -134,38 +134,37 @@
             }
         }
 
-        function submitEmail() {
-            const email = document.getElementById('email-input').value;
-            const errorMessage = document.getElementById('error-message');
-            
-            if (validateEmail(email)) {
-                errorMessage.classList.add('hidden');
-                sendEmailToServer(email);
+        async function handlePaymentClick(duration) {
+            // Assume payment is completed after redirection
+            const response = await fetch(webhookUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ duration })
+            });
+
+            if (response.ok) {
                 hidePaywall();
+                startTimer(parseInt(duration));
             } else {
-                errorMessage.classList.remove('hidden');
+                console.error("Payment confirmation failed.");
             }
         }
 
-        function validateEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
+        function startTimer(minutes) {
+            const endTime = Date.now() + minutes * 60000;
 
-        async function sendEmailToServer(email) {
-            try {
-                const response = await fetch('https://your-endpoint-url.com/webhook', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email })
-                });
-                const data = await response.json();
-                console.log('Server response:', data);
-            } catch (error) {
-                console.error('Error sending email to server:', error);
-            }
+            if (countdown) clearInterval(countdown);
+
+            countdown = setInterval(() => {
+                const timeLeft = endTime - Date.now();
+
+                if (timeLeft <= 0) {
+                    clearInterval(countdown);
+                    showPaywall();
+                }
+            }, 1000);
         }
 
         setTimeout(showPaywall, 10000); // Show paywall after 10 seconds
