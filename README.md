@@ -7,33 +7,39 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       background: #000;
+      flex-direction: column;
     }
 
     .image-container {
-      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
     }
 
     .image-container img {
       max-width: 90%;
-      max-height: 80%;
+      max-height: 100%;
       border: 2px solid #fff;
     }
 
     .chat-widget {
       width: 80%;
       max-width: 400px;
-      position: relative !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50%;
     }
   </style>
 </head>
 <body>
   <div class="image-container">
-    <img src="https://static.posters.cz/image/1300/postere/spider-man-gotcha-i127936.jpg" alt="Second Image">
+    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp" alt="Second Image">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
