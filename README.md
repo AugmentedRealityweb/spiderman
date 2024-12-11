@@ -97,7 +97,7 @@
             <h2>Purchase More Conversation Time</h2>
             <p>Select your desired time extension:</p>
             <ul>
-                <li>10 minutes: 15 lei - <a href="https://revolut.me/r/9ouIF7WVBU" target="_blank">Pay Now</a></li>
+                <li>10 minutes: 15 lei - <a href="https://revolut.me/r/OTrAj56eBh" target="_blank">Pay Now</a></li>
                 <li>30 minutes: 25 lei - <a href="https://revolut.me/r/qTzpX33NT1" target="_blank">Pay Now</a></li>
                 <li>60 minutes: 50 lei - <a href="https://revolut.me/r/Z0QtuDZnEQ" target="_blank">Pay Now</a></li>
             </ul>
