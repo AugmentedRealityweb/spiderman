@@ -20,7 +20,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
+      z-index: 1;
     }
 
     .image-container img {
@@ -30,13 +30,20 @@
     }
 
     .chat-widget {
-      width: 80%;
-      max-width: 400px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-    }
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    height: 600px;
+    border: 2px solid #a1887f;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff5e1;
+}
   </style>
 </head>
 <body>
