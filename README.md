@@ -6,14 +6,16 @@
     <title>Paywall</title>
     <style>
         body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #000;
-      flex-direction: column;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            flex-direction: column;
         }
 
         #paywall {
@@ -26,7 +28,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 1;
+            z-index: 2;
         }
 
         .paywall-content {
@@ -67,7 +69,7 @@
         .chat-widget {
             position: fixed;
             top: 40%;
-            left: 30%;
+            left: 50%;
             transform: translate(-50%, -50%);
             width: 450px;
             height: 500px;
@@ -75,7 +77,7 @@
             display: flex;
             flex-direction: column;
             background-color: transparent;
-            z-index: 1;
+            z-index: 3;
         }
     </style>
 </head>
@@ -95,26 +97,14 @@
     <div id="paywall">
         <div class="paywall-content">
             <h2>Purchase More Conversation Time</h2>
-            <p>Select your desired time extension:</p>
-            <ul>
-                <li>10 minutes: 15 lei - <a href="https://revolut.me/r/OTrAj56eBh" target="_blank">Pay Now</a></li>
-                <li>30 minutes: 25 lei - <a href="https://revolut.me/r/qTzpX33NT1" target="_blank">Pay Now</a></li>
-                <li>60 minutes: 50 lei - <a href="https://revolut.me/r/Z0QtuDZnEQ" target="_blank">Pay Now</a></li>
-            </ul>
-            <p>After payment, enter the code received on Revolut to unlock access:</p>
-            <input type="text" id="code-input" placeholder="Enter your code">
-            <button onclick="validateCode()">Unlock</button>
-            <p id="error-message" class="hidden">Invalid code. Please try again.</p>
+            <p>Enter your email to extend your conversation:</p>
+            <input type="email" id="email-input" placeholder="Enter your email">
+            <button onclick="submitEmail()">Submit</button>
+            <p id="error-message" class="hidden">Please enter a valid email.</p>
         </div>
     </div>
 
     <script>
-        const validCodes = {
-            "1234": 10,
-            "2345": 30,
-            "3456": 60
-        };
-
         const images = document.querySelectorAll('.image-container img');
         let currentIndex = 0;
 
@@ -144,32 +134,38 @@
             }
         }
 
-        function validateCode() {
-            const code = document.getElementById('code-input').value;
+        function submitEmail() {
+            const email = document.getElementById('email-input').value;
             const errorMessage = document.getElementById('error-message');
             
-            if (validCodes[code]) {
+            if (validateEmail(email)) {
                 errorMessage.classList.add('hidden');
+                sendEmailToServer(email);
                 hidePaywall();
-                startTimer(validCodes[code]);
             } else {
                 errorMessage.classList.remove('hidden');
             }
         }
 
-        function startTimer(minutes) {
-            const endTime = Date.now() + minutes * 60000;
+        function validateEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
 
-            if (countdown) clearInterval(countdown);
-
-            countdown = setInterval(() => {
-                const timeLeft = endTime - Date.now();
-
-                if (timeLeft <= 0) {
-                    clearInterval(countdown);
-                    showPaywall();
-                }
-            }, 1000);
+        async function sendEmailToServer(email) {
+            try {
+                const response = await fetch('https://your-endpoint-url.com/webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                console.log('Server response:', data);
+            } catch (error) {
+                console.error('Error sending email to server:', error);
+            }
         }
 
         setTimeout(showPaywall, 10000); // Show paywall after 10 seconds
