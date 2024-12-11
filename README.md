@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paywall</title>
     <style>
-         margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #000;
-      flex-direction: column;
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            flex-direction: column;
         }
 
         #paywall {
@@ -25,7 +26,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 3;
+            z-index: 1000;
         }
 
         .paywall-content {
@@ -34,10 +35,6 @@
             padding: 20px;
             max-width: 400px;
             margin: 50px auto;
-        }
-
-        .hidden {
-            display: none;
         }
 
         .image-container {
@@ -65,7 +62,7 @@
 
         .chat-widget {
             position: fixed;
-            top: 50%;
+            top: 40%;
             left: 30%;
             transform: translate(-50%, -50%);
             width: 450px;
@@ -74,7 +71,7 @@
             display: flex;
             flex-direction: column;
             background-color: transparent;
-            z-index: 1;
+            z-index: 2;
         }
     </style>
 </head>
@@ -122,7 +119,7 @@
             document.getElementById('paywall').style.display = 'block';
             const chatAgent = document.getElementById('chat-agent');
             if (chatAgent) {
-                chatAgent.setAttribute('agent-id', '');
+                chatAgent.removeAttribute('agent-id');
             }
         }
 
@@ -135,7 +132,6 @@
         }
 
         async function handlePaymentClick(duration) {
-            // Assume payment is completed after redirection
             const response = await fetch(webhookUrl, {
                 method: "POST",
                 headers: {
@@ -167,7 +163,7 @@
             }, 1000);
         }
 
-        setTimeout(showPaywall, 10000); // Show paywall after 10 seconds
+        setTimeout(showPaywall, 10000);
     </script>
 </body>
 </html>
