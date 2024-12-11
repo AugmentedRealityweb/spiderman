@@ -29,18 +29,12 @@
       height: 100%;
       object-fit: cover;
       position: absolute;
-      animation: fade 8s infinite;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
     }
 
-    .image-container img:nth-child(2) {
-      animation-delay: 4s;
-    }
-
-    @keyframes fade {
-      0% { opacity: 1; }
-      45% { opacity: 1; }
-      55% { opacity: 0; }
-      100% { opacity: 0; }
+    .image-container img.active {
+      opacity: 1;
     }
 
     .chat-widget {
@@ -54,18 +48,34 @@
       display: flex;
       flex-direction: column;
       background-color: transparent;
-      z-index: 2;
+      z-index: 1;
     }
   </style>
 </head>
 <body>
   <div class="image-container">
-    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2VtcHdiZHpjMmgybTl5eWtvMjdnMnVzbmU3eG80OW5kemJsOGc0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wuU9Hvp5wF7xe/giphy.webp" alt="First GIF">
-    <img src="https://i.pinimg.com/originals/32/64/5e/32645e1a0642ce7fc4d952dde6e598a8.gif" alt="Second GIF">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2VtcHdiZHpjMmgybTl5eWtvMjdnMnVzbmU3eG80OW5kemJsOGc0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wuU9Hvp5wF7xe/giphy.webp" class="active">
+    <img src="https://i.pinimg.com/originals/32/64/5e/32645e1a0642ce7fc4d952dde6e598a8.gif">
+    <img src="https://giphy.com/gifs/spiderman-spiderverse-into-the-1qErVv5GVUac8uqBJU">
+    <img src="https://i.giphy.com/BWD3CtcudWL28.webp">
   </div>
+
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
     <script src="https://elevenlabs.io/convai-widget/index.js" async></script>
   </div>
+
+  <script>
+    const images = document.querySelectorAll('.image-container img');
+    let currentIndex = 0;
+
+    function showNextImage() {
+      images[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 4000);
+  </script>
 </body>
 </html>
