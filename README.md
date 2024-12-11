@@ -43,6 +43,7 @@
     display: flex;
     flex-direction: column;
     background-color: #fff5e1;
+    z-index: 1;
 }
   </style>
 </head>
