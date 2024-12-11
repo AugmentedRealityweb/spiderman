@@ -6,7 +6,7 @@
     <title>Paywall</title>
     <style>
         body {
-             margin: 0;
+      margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
@@ -67,7 +67,7 @@
         .chat-widget {
             position: fixed;
             top: 40%;
-            left: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             width: 450px;
             height: 500px;
