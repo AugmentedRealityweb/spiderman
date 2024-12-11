@@ -28,7 +28,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 2;
+            z-index: 1;
         }
 
         .paywall-content {
@@ -77,7 +77,7 @@
             display: flex;
             flex-direction: column;
             background-color: transparent;
-            z-index: 3;
+            z-index: 1;
         }
     </style>
 </head>
