@@ -25,16 +25,16 @@
     }
 
     .chat-widget {
-      width: 80%;
+      width: 40%;
       max-width: 400px;
       margin-top: auto;
-      margin-bottom: 20px;
+      margin-bottom: 60px;
     }
   </style>
 </head>
 <body>
   <div class="image-container">
-    <img src="https://static.posters.cz/image/1300/postere/spider-man-gotcha-i127936.jpg" alt="Second Image">
+    <img src="https://i.pinimg.com/originals/bc/cd/8d/bccd8d514024b3547ef6d05843ce4864.gif" alt="Second Image">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
