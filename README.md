@@ -23,7 +23,7 @@
 
     .image-container img {
       max-width: 2000px;
-      max-height: 1080px;
+      max-height: 2080px;
       object-fit: cover;
       border: 2px solid #fff;
     }
@@ -34,7 +34,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 50%;
+      height: 20%;
     }
   </style>
 </head>
