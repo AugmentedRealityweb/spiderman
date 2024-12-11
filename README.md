@@ -31,11 +31,11 @@
 
     .chat-widget {
     position: fixed;
-    top: 20%;
-    left: 50%;
+    top: 40%;
+    left: 30%;
     transform: translate(-50%, -50%);
     width: 450px;
-    height: 50px;
+    height: 500px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
