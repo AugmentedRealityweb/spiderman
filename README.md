@@ -6,14 +6,16 @@
     <title>Paywall</title>
     <style>
         body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
             margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #000;
-      flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            flex-direction: column;
         }
 
         #paywall {
@@ -26,7 +28,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 1;
+            z-index: 2;
         }
 
         .paywall-content {
@@ -67,7 +69,7 @@
         .chat-widget {
             position: fixed;
             top: 40%;
-            left: 30%;
+            left: 50%;
             transform: translate(-50%, -50%);
             width: 450px;
             height: 500px;
@@ -75,7 +77,7 @@
             display: flex;
             flex-direction: column;
             background-color: transparent;
-            z-index: 1;
+            z-index: 3;
         }
     </style>
 </head>
@@ -88,7 +90,7 @@
     </div>
 
     <div class="chat-widget">
-        <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
+        <elevenlabs-convai id="chat-agent" agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
         <script src="https://elevenlabs.io/convai-widget/index.js" async></script>
     </div>
 
@@ -130,10 +132,18 @@
 
         function showPaywall() {
             document.getElementById('paywall').style.display = 'block';
+            const chatAgent = document.getElementById('chat-agent');
+            if (chatAgent) {
+                chatAgent.setAttribute('agent-id', '');
+            }
         }
 
         function hidePaywall() {
             document.getElementById('paywall').style.display = 'none';
+            const chatAgent = document.getElementById('chat-agent');
+            if (chatAgent) {
+                chatAgent.setAttribute('agent-id', 'sNEfrsQUklzPW2Hu6VGg');
+            }
         }
 
         function validateCode() {
