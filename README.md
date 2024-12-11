@@ -35,7 +35,7 @@
     left: 30%;
     transform: translate(-50%, -50%);
     width: 450px;
-    height: 600px;
+    height: 50px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -46,7 +46,7 @@
 </head>
 <body>
   <div class="image-container">
-    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp" alt="Background Image">
+    <img src="https://64.media.tumblr.com/a0187c8083520ea4434a76bbec8154d7/tumblr_pxyuq0F23d1ql43puo1_400.gifv">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
