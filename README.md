@@ -25,10 +25,10 @@
     }
 
     .chat-widget {
-      width: 40%;
+      width: 80%;
       max-width: 400px;
       margin-top: auto;
-      margin-bottom: 600px;
+      margin-bottom:40px;
     }
   </style>
 </head>
