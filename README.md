@@ -6,16 +6,14 @@
     <title>Paywall</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #000;
-            flex-direction: column;
+             margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #000;
+      flex-direction: column;
         }
 
         #paywall {
@@ -28,7 +26,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 2;
+            z-index: 1;
         }
 
         .paywall-content {
@@ -77,7 +75,7 @@
             display: flex;
             flex-direction: column;
             background-color: transparent;
-            z-index: 3;
+            z-index: 1;
         }
     </style>
 </head>
