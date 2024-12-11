@@ -25,7 +25,7 @@
             background-color: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 20px;
-            z-index: 2;
+            z-index: 3;
         }
 
         .paywall-content {
@@ -65,8 +65,8 @@
 
         .chat-widget {
             position: fixed;
-            top: 40%;
-            left: 50%;
+            top: 50%;
+            left: 30%;
             transform: translate(-50%, -50%);
             width: 450px;
             height: 500px;
