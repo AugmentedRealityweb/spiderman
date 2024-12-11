@@ -31,14 +31,13 @@
 
     .chat-widget {
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 30%;
     transform: translate(-50%, -50%);
     width: 450px;
     height: 600px;
-    border: 2px solid #a1887f;
+    border: 2px solid transparent;
     border-radius: 20px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     overflow: hidden;
     display: flex;
     flex-direction: column;
