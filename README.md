@@ -32,7 +32,7 @@
     .chat-widget {
     position: fixed;
     top: 40%;
-    left: 30%;
+    left: 20%;
     transform: translate(-50%, -50%);
     width: 450px;
     height: 50px;
@@ -46,7 +46,7 @@
 </head>
 <body>
   <div class="image-container">
-    <img src="https://64.media.tumblr.com/a0187c8083520ea4434a76bbec8154d7/tumblr_pxyuq0F23d1ql43puo1_400.gifv">
+    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6bddfaca-e177-478a-b606-4b55711caf9d/d7acy16-7f023f21-92ee-4b8b-8119-c81016caee1b.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZiZGRmYWNhLWUxNzctNDc4YS1iNjA2LTRiNTU3MTFjYWY5ZFwvZDdhY3kxNi03ZjAyM2YyMS05MmVlLTRiOGItODExOS1jODEwMTZjYWVlMWIuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.p95kmGJdxoVFXN40epNr1ntexC1-pebAkMPl1afCEzY">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
