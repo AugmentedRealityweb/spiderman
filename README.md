@@ -32,7 +32,7 @@
 </head>
 <body>
   <div class="image-container">
-    <img src="https://static.posters.cz/image/1300/postere/spider-man-gotcha-i127936.jpg" alt="Second Image">
+    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp" alt="Second Image">
   </div>
   <div class="chat-widget">
     <elevenlabs-convai agent-id="sNEfrsQUklzPW2Hu6VGg"></elevenlabs-convai>
