@@ -56,7 +56,7 @@
   <div class="image-container">
     <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2VtcHdiZHpjMmgybTl5eWtvMjdnMnVzbmU3eG80OW5kemJsOGc0NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/wuU9Hvp5wF7xe/giphy.webp" class="active">
     <img src="https://i.pinimg.com/originals/32/64/5e/32645e1a0642ce7fc4d952dde6e598a8.gif">
-    <img src="https://giphy.com/gifs/spiderman-spiderverse-into-the-1qErVv5GVUac8uqBJU">
+    <img src="https://i.giphy.com/1qErVv5GVUac8uqBJU.webp">
     <img src="https://i.giphy.com/BWD3CtcudWL28.webp">
   </div>
 
