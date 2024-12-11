@@ -31,8 +31,8 @@
 
     .chat-widget {
     position: fixed;
-    top: 40%;
-    left: 20%;
+    top: 20%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 450px;
     height: 50px;
